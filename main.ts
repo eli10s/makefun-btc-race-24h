@@ -4,9 +4,8 @@
 // slowly moving level, then snaps back after a short dip. The bot waits flat
 // until the latest close sits at least DIP_BPS below its SMA_BARS-bar simple
 // moving average, then buys with all of its cash. Once in, it sells the whole
-// position when the close climbs TAKE_BPS above what it paid (cost basis,
-// fees included) or drops STOP_BPS below it. Nothing else trades.
-//
+// position when the close climbs 180 bps above what it paid (cost basis,
+// fees included) or drops 250 bps below it. Nothing else trades.
 // Everything is causal: every decision uses only closes already seen, and
 // every number is integer (bigint) math, so two runs on the same bars emit
 // the same orders. No clock, no network, no files, no randomness.
@@ -18,8 +17,11 @@ const SYMBOL = 'CBBTC';
 const SMA_BARS = 90;
 /** Entry: close this far below the moving average, in basis points. */
 const DIP_BPS = 80;
-/** Exit with a win: close this far above the entry cost, in basis points. */
-const TAKE_BPS = 150;
+/** Exit with a win: close this far above the entry cost, in basis points.
+ * 180 sits mid-way up the ramp of the dev window's bounce peaks (about
+ * +2.0% above a dip entry): 150 leaves money on the table, 195 hugs the
+ * peak, and 220 never fires at all. */
+const TAKE_BPS = 180;
 /** Exit with a loss: close this far below the entry cost, in basis points. */
 const STOP_BPS = 250;
 /** Slippage guard on every order: wide open, the harness still rejects absurd fills. */

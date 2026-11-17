@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/btc-race-24h-20261117-0603/eli10s/makefun-btc-race-24h/rank.svg)](https://make.fun/bounty/btc-race-24h-20261117-0603/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261117-0603)
 [![reward](https://make.fun/badge/btc-race-24h-20261117-0603/eli10s/makefun-btc-race-24h/reward.svg)](https://make.fun/bounty/btc-race-24h-20261117-0603?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261117-0603)
 
-A dip-buy mean-reversion bot that trades cbBTC minute by minute on Orca Whirlpool prices: it buys with its whole cash balance when the latest close sits 80 bps below its 90-bar moving average, and sells everything when the close climbs 150 bps above its entry cost or falls 250 bps below it. Simulation only — paper money, no real money is traded. On the published dev window it made a net PnL of +$30.78 over 5 trades.
+A dip-buy mean-reversion bot that trades cbBTC minute by minute on Orca Whirlpool prices: it buys with its whole cash balance when the latest close sits 80 bps below its 90-bar moving average, and sells everything when the close climbs 180 bps above its entry cost or falls 250 bps below it. Simulation only — paper money, no real money is traded. On the published dev window it made a net PnL of +$35.48 over 5 trades.
 
 ## Run it
 
